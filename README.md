@@ -1,6 +1,6 @@
 # re-frame-name-game
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
+A [re-frame](https://github.com/Day8/re-frame) based ClojureScript implementation of the WillowTree Name Game test project.
 
 ## Development Mode
 
