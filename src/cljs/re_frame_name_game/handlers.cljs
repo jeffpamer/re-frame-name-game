@@ -14,7 +14,7 @@
 
 (re-frame/register-handler
   :shuffle-employees
-  (fn [db]
+  (fn [db _]
     (merge db {:employees (shuffle (:employees db))}
               {:guesses []})))
 
