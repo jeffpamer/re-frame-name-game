@@ -8,6 +8,12 @@
    db/default-db))
 
 (re-frame/register-handler
+  :update-employees
+  (fn [db [_ employees]]
+    (println (:employees employees))
+    (merge db employees)))
+
+(re-frame/register-handler
   :shuffle-employees
   (fn [db]
     (merge db {:employees (shuffle (:employees db))}

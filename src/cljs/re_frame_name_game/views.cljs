@@ -28,11 +28,11 @@
 
 (defn correct-message
   []
-  (rand-nth ["Good Job!" "Booyah!" "Success!" "You Win!" "Awesome!" "Radical!" "Excellent!"]))
+  (rand-nth ["Good Job!" "Booyah!" "Success!" "You Win!" "Wonderful!" "Awesome!" "Radical!" "Excellent!"]))
 
 (defn incorrect-message
   []
-  (rand-nth ["Wrong!" "Nope!" "LOL Nope!" "You Lose!" "NO!" "Try Again!" "No Way!" "Oh Please" "You Joking?!" "Whatever"]))
+  (rand-nth ["Wrong!" "Nope!" "LOL Nope!" "NO!" "Try Again!" "No Way!" "Oh Please" "Whatever"]))
 
 (defn guess-message
   [correct guess]

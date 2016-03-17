@@ -45,6 +45,8 @@ h2 {
 
 img {
     cursor: pointer;
+    width: 340px;
+    height: 340px;
 }
 
 .guess-message {
