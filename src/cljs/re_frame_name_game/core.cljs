@@ -11,15 +11,16 @@
   (println "dev mode"))
 
 (defn fetch-employees []
-  (GET "http://api.namegame.willowtreemobile.com/" {:response-format :json
-                                                    :keywords? true
-                                                    :handler #(re-frame/dispatch [:update-employees [:employees (shuffle %)]])}))
+  (GET "http://api.namegame.willowtreemobile.com/"
+    {:response-format :json
+     :keywords? true
+     :handler #(re-frame/dispatch [:update-employees [:employees (shuffle %)]])}))
 
 (defn mount-root []
   (reagent/render [views/name-game]
                   (.getElementById js/document "app")))
 
-(defn ^:export init [] 
+(defn ^:export init []
   (fetch-employees)
   (re-frame/dispatch-sync [:initialize-db])
   (mount-root))

@@ -10,7 +10,6 @@
 (re-frame/register-handler
   :update-employees
   (fn [db [_ employees]]
-    (println (:employees employees))
     (merge db employees)))
 
 (re-frame/register-handler

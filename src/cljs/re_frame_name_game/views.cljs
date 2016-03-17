@@ -3,9 +3,9 @@
     (:require [re-frame.core :refer [subscribe dispatch]]))
 
 ; helper for finding item in collection
-(defn in? 
+(defn in?
   "true if coll contains elm"
-  [coll elm]  
+  [coll elm]
   (some #(= elm %) coll))
 
 (defn employee-item
@@ -22,23 +22,27 @@
           guesses @guesses]
       [:ul.employee-list
         (for [employee @employees]
-          ^{:key (:name employee)} [employee-item employee 
+          ^{:key (:name employee)} [employee-item employee
                                                   (= active-employee (:name employee))
                                                   (in? guesses (:name employee))])])))
 
 (defn correct-message
   []
-  (rand-nth ["Good Job!" "Booyah!" "Success!" "You Win!" "Wonderful!" "Awesome!" "Radical!" "Excellent!"]))
+  (rand-nth ["Good Job!" "Booyah!" "Success!"
+             "You Win!" "Wonderful!" "Awesome!"
+             "Radical!" "Excellent!" "Nice!"]))
 
 (defn incorrect-message
   []
-  (rand-nth ["Wrong!" "Nope!" "LOL Nope!" "NO!" "Try Again!" "No Way!" "Oh Please" "Whatever"]))
+  (rand-nth ["Wrong!" "Nope!" "LOL Nope!"
+             "NO!" "Try Again!" "No Way!"
+             "Oh Please" "Whatever"]))
 
 (defn guess-message
   [correct guess]
-  [:div.guess-message {:class (and correct "correct") 
-                       :style {:transform (str "rotate(" ((rand-nth [+ -]) 0 (rand 33)) "deg)")}
-                       :key guess}
+  ^{:key guess}
+  [:div.guess-message {:class (and correct "correct")
+                       :style {:transform (str "rotate(" ((rand-nth [+ -]) 0 (rand 33)) "deg)")}}
                       (if correct (correct-message) (incorrect-message))])
 
 (defn name-game []
