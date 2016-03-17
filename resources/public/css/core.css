@@ -1,0 +1,71 @@
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    height: 340px;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 4em;
+    margin-top: -1em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+img {
+    cursor: pointer;
+}
+
+.guess-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 100vh;
+    width: 100%;
+    text-align: center;
+    font-size: 20em;
+    font-weight: bold;
+    pointer-events: none;
+    -webkit-user-select: none;
+    color: red;
+    opacity: 0;
+    animation: fadeout 2s ease-in
+}
+
+.guess-message.correct {
+    color: green;
+    pointer-events: all;
+    transform: rotate(0deg) !important;
+}
+
