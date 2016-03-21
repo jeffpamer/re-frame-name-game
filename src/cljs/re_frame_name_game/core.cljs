@@ -16,8 +16,7 @@
   [url]
   (let [c (chan)]
     (xhr/send url
-      (fn [event]
-        (put! c (js->clj (.getResponseJson (.-target event)) :keywordize-keys true))))
+      #(put! c (-> % .-target .getResponseJson (js->clj :keywordize-keys true))))
     c))
 
 (defn fetch-employees
