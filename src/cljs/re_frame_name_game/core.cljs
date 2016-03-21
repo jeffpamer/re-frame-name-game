@@ -13,6 +13,7 @@
   (println "dev mode"))
 
 (defn fetch
+  "Fetch JSON from url, convert to keyed clojure types, and post results to an async channel"
   [url]
   (let [c (chan)]
     (xhr/send url

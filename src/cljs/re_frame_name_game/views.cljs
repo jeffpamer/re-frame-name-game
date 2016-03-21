@@ -56,8 +56,8 @@
 
         (when-not (empty? @employees)
           [:div
-            [employee-list active-employees active-employee guesses]
-            [:h2.active-employee (str "Who is " @active-employee "?")]])
+            [:h2.active-employee (str "Who is " @active-employee "?")]
+            [employee-list active-employees active-employee guesses]])
 
         (when-not (empty? @guesses)
           (let [correct (= @active-employee (last @guesses))]
