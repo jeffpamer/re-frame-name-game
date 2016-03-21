@@ -89,6 +89,5 @@ img {
 .guess-message.correct {
     color: green;
     pointer-events: all;
-    transform: rotate(0deg) !important;
 }
 

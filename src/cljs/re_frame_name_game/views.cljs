@@ -43,7 +43,7 @@
   [correct guess]
   ^{:key guess}
   [:div.guess-message {:class (and correct "correct")
-                       :style {:transform (str "rotate(" ((rand-nth [+ -]) 0 (rand 33)) "deg)")}}
+                       :style {:transform (str "rotate(" ((rand-nth [+ -]) 0 (rand 20)) "deg)")}}
                       (if correct (correct-message) (incorrect-message))])
 
 (defn name-game []
