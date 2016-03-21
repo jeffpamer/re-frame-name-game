@@ -20,7 +20,7 @@
         (put! c (js->clj (.getResponseJson (.-target event)) :keywordize-keys true))))
     c))
 
-(defn fetch-employees 
+(defn fetch-employees
   []
   (go (let [employees (<! (fetch "http://api.namegame.willowtreemobile.com/"))]
         (re-frame/dispatch [:update-employees [:employees (shuffle employees)]]))))
