@@ -3,6 +3,11 @@
     to { opacity: 0; }
 }
 
+@keyframes fadehalf {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -25,7 +30,8 @@ body {
 ul {
     margin: 0;
     padding: 0;
-    height: 340px;
+    height: 20vw;
+    max-height: 500px;
 }
 
 li {
@@ -53,8 +59,15 @@ h2 {
 
 img {
     cursor: pointer;
-    width: 340px;
-    height: 340px;
+    width: 20vw;
+    height: 20vw;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.incorrect {
+    opacity: 0.5;
+    animation: fadehalf 0.33s ease-out;
 }
 
 .guess-message {

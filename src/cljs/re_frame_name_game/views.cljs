@@ -13,6 +13,7 @@
   (fn [{:keys [name url]} active selected]
     [:li.employee
       [:img {:src url
+             :class (when (and selected (not active)) "incorrect")
              :on-click #(dispatch [:guess name])}]]))
 
 (defn employee-list
